@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --tertiary-color: rgb(255, 221, 182);
+  --tertiary-hover: #f0a651;
+
+  --secondary-color: rgb(174, 241, 245);
+  --secondary-hover: #70edf3;
+
+  --primary-color: rgb(237, 187, 255);
+  --primary-hover: #c359ea;
+
+  --white-color: rgb(252, 253, 255);
+  --black-color: #141843;
+}
+
+body,
+html {
+  line-height: 1.3;
+  color: var(--black-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  border: 12px solid #fff;
+  z-index: 99;
+}
+
+.container::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top right,
+    rgb(237, 187, 255, 0.7),
+    rgb(174, 241, 245, 0.7),
+    rgb(255, 221, 182, 0.7)
+  );
+  filter: blur(50px);
+  z-index: -1;
+}
+
+article {
+  padding: 2rem;
+}
+
+article .main-header {
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+article .pricing h2 {
+  font-weight: bold;
+}
+
+article .pricing h2 .currency {
+  font-size: 3rem;
+}
+
+article .items {
+  padding: 1.5rem 0;
+  max-width: 200px;
+}
+
+.btn {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--black-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+article .btn-primary {
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in;
+}
+
+article .btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+article .btn-secondary {
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease-in;
+}
+
+article .btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+article .btn-tertiary {
+  background-color: var(--tertiary-color);
+  transition: all 0.3s ease-in;
+}
+
+article .btn-tertiary:hover {
+  background-color: var(--tertiary-hover);
+}
+
+@media (max-width: 876px) {
+  body {
+    overflow: visible;
+    height: unset;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    margin: auto;
+  }
+  article {
+    border-bottom: 1px solid rgb(240, 236, 236);
+  }
+}
